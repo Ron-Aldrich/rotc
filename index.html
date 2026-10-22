@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Military Science Reviewer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0e8;--sf:#fff;--ink:#1c2318;--mut:#586250;--ac:#4f6a2a;--on:#fff;--ln:#d3d8c8;--ok:#2d7a38;--no:#b3392b;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141813;--sf:#1d2219;--ink:#e8ecdf;--mut:#a3ac98;--ac:#9fc15f;--on:#10140c;--ln:#2f362a;--ok:#6fbf7a;--no:#e2786a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141813;--sf:#1d2219;--ink:#e8ecdf;--mut:#a3ac98;--ac:#9fc15f;--on:#10140c;--ln:#2f362a;--ok:#6fbf7a;--no:#e2786a;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Barlow,system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--ln);display:flex;flex-wrap:wrap;align-items:center;gap:6px 24px;padding:10px 20px}
+.brand{font:700 1.6rem "Barlow Condensed",Impact,sans-serif;margin-right:auto}
+nav{display:flex;gap:4px}
+nav button{font:inherit;font-weight:600;background:none;border:0;border-bottom:3px solid transparent;color:var(--mut);padding:8px 12px;cursor:pointer;min-height:44px}
+nav button[aria-current=true]{color:var(--ink);border-color:var(--ac)}
+main{max-width:920px;margin:0 auto;padding:28px 20px 80px}
+h1,h2,h3{font-family:"Barlow Condensed",Impact,sans-serif;line-height:1.05;margin:.3em 0}
+h1{font-size:clamp(2.6rem,9vw,4.6rem)}h2{font-size:clamp(1.9rem,5vw,2.8rem)}h3{font-size:1.6rem;margin-top:0}
+p{max-width:62ch}
+.meta{color:var(--mut);font-size:.95rem}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.btn,.pill,.opt{font:inherit;font-weight:600;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:10px 16px;cursor:pointer;min-height:44px}
+.btn:hover,.opt:hover:not(:disabled){border-color:var(--ac)}
+.btn.pri{background:var(--ac);border-color:var(--ac);color:var(--on)}
+.btn.big{margin-top:4px}
+.lnk{font:inherit;background:none;border:0;color:var(--mut);text-decoration:underline;cursor:pointer;padding:10px 0}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.bar{height:8px;background:var(--ln);border-radius:4px;overflow:hidden;margin:10px 0}.bar i{display:block;height:100%;background:var(--ac);transition:width .4s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:28px 0}
+.mc{background:var(--sf);border:1px solid var(--ln);border-top:5px solid var(--c);border-radius:10px;padding:18px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
+.pill{border-radius:999px;padding:6px 14px;min-height:40px}.pill.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:10px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;font-weight:600;font-size:1.1rem;padding:14px 0}
+details ul{padding-left:20px;margin:0 0 14px}li{margin:7px 0}
+.fc{display:grid;width:100%;min-height:290px;background:none;border:0;padding:0;margin:14px 0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.fc>span{grid-area:1/1;display:flex;flex-direction:column;justify-content:center;padding:28px;font-size:clamp(1.25rem,3.5vw,1.7rem);line-height:1.3;background:var(--sf);border:1px solid var(--ln);border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .5s;transform:perspective(1100px) rotateY(0)}
+.fc em{font-style:normal;font-size:.85rem;color:var(--mut);margin-bottom:10px}
+.fc .bk{background:var(--ink);color:var(--bg);transform:perspective(1100px) rotateY(180deg)}
+.fc.on>span:first-child{transform:perspective(1100px) rotateY(-180deg)}.fc.on .bk{transform:perspective(1100px) rotateY(0)}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:22px}
+.opts{display:grid;gap:10px;margin:18px 0}.opt{text-align:left}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 20%,var(--sf))}.opt.no{border-color:var(--no);background:color-mix(in srgb,var(--no) 20%,var(--sf))}
+.inp{width:100%;font:inherit;padding:12px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--ink);margin:16px 0 10px}
+.fb{font-weight:600}.fb.ok{color:var(--ok)}.fb.no{color:var(--no)}
+.rev{padding-left:18px}.rev b{display:block;color:var(--ok)}
+@media(max-width:600px){nav{width:100%}nav button{flex:1;padding:8px 4px}.row .btn{flex:1}main{padding-top:20px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="brand">Military Science Reviewer</div>
+<nav aria-label="Sections"><button data-v="home" onclick="go('home')">Home</button><button data-v="lessons" onclick="go('lessons')">Lessons</button><button data-v="cards" onclick="go('cards')">Flashcards</button><button data-v="quiz" onclick="go('quiz')">Quiz</button></nav></header>
+<main id="app"></main>
+<script>
+const D=[
+["form","Unit formations","Fire team, squad and platoon formations and how they move",[
+["Fire team and squad",["Wedge is the basic fire team formation, with about 10 meters between soldiers. It expands and contracts with the terrain.","Squad column is the most common formation. It gives good dispersion sideways and in depth without losing control. The lead fire team is the base.","Squad line gives maximum firepower to the front. The fire team on the right is the base.","Squad file is used when not in column or line. The squad leader moves to the first or second position for more control."]],
+["Movement techniques",["Traveling: contact is not likely and speed is needed.","Traveling overwatch: contact is possible.","Bounding overwatch: contact is expected. It is the most secure but the slowest.","Choose by the likelihood of contact and the need for speed. Weigh control, dispersion, speed and security.","Any technique works with any formation. Leaders control movement with arm-and-hand signals and use radios only when needed."]],
+["Rifle platoon",["Three rifle squads, led by a platoon leader and a platoon sergeant.","Platoon leader: answers for everything the platoon does or fails to do.","Platoon sergeant: assists with supervision, administration, training, discipline, and the morale and welfare of the platoon.","Squad leader: answers for what the squad does or fails to do."]],
+["Platoon formations",["Choose using the mission, terrain and METT-T analysis.","Column: the primary movement formation. Good dispersion and easy control. The lead squad is the base.","Line, squads on line: maximum fire to the front, little to the flanks, hard to control. The basic assault formation.","Line, squads in column: easier to control and faster than squads on line, but harder than a column.","Vee: two squads up front for heavy fire on contact, one in the rear. Hard to control and slow.","Wedge: two squads behind the lead squad. Large volume of fire to the front or flanks, and squads left free to maneuver.","File: used when visibility is poor. Soldiers close up so messages can be passed along."]]],
+[["Basic formation of the fire team","Wedge, with about 10 meters between soldiers"],["Most common squad formation","Squad column"],["Which squad formation gives maximum firepower to the front?","Squad line"],["Three movement techniques","Traveling, traveling overwatch, bounding overwatch"],["Most secure but slowest movement technique","Bounding overwatch"],["Basic platoon assault formation","Platoon line, squads on line"],["Platoon formation with two squads up front and one behind","Platoon vee"],["What does a leader weigh when choosing a platoon formation?","Mission, terrain and METT-T analysis"]],
+[["Which movement technique is used when enemy contact is expected?",2,["Traveling","Traveling overwatch","Bounding overwatch","Squad file"]],["The wedge is the basic formation of the squad.",false],["Squad line provides maximum firepower to the front.",true],["What is the primary platoon movement formation?","column"],["Which platoon formation is hard to control and slow, with two squads up front?",0,["Vee","Wedge","Column","File"]],["About how many meters apart are soldiers in a fire team wedge?","10|ten"],["Which platoon formation is used when visibility is poor?",3,["Vee","Wedge","Column","File"]]]],
+["weap","Basic weapon training","M16A1 and M14 rifles: data, cycle of operations, field stripping and care",[
+["M16A1 rifle, 5.56 mm",["Weighs 6.5 lbs without the magazine. Firing weight, loaded with sling, is 7.6 lbs.","Length is 39 inches with the flash suppressor. The barrel is 21 inches with it and 20 inches without.","Magazine-fed, gas-operated, air-cooled shoulder weapon with semi or automatic fire."]],
+["Cycle of operations",["Eight steps in order: firing, unlocking, extracting, ejecting, cocking, feeding, chambering, locking.","Firing: the firing pin strikes the primer of the cartridge.","Extracting removes the empty case from the chamber. Ejecting removes it from the weapon.","Feeding places the cartridge in the receiver. Chambering places it in the chamber. Locking seals it there."]],
+["Clearing and field stripping",["The first step in disassembling any weapon is to clear it.","Selector lever to safe, remove the magazine, lock the bolt open, return the charging handle forward.","The selector must be on safe when clearing, to prevent damage to the automatic sear.","Lay parts down in the order of disassembly so none are lost.","After reassembly, check the function with the selector at safe, semi and auto."]],
+["Care and maintenance",["Brush the bore in straight strokes. Never reverse the brush while it is in the bore.","Run cleaning patches until one comes out clean and dry, then lightly oil the bore and locking lugs.","Before firing, wipe the bore dry and free of oil.","During firing, follow the recommended rates of fire and watch for sluggish parts. Stop using a rifle that shows wear.","After firing, repeat the normal cleaning routine."]],
+["M14 and M14A1, 7.62 mm",["Lightweight, air-cooled, gas-operated, magazine-fed shoulder weapon.","Overall length is 44.3 inches with the flash suppressor.","Disassembly separates three groups: firing mechanism, barrel and receiver group, and stock.","The M14A1 follows the same steps, plus removal of the stabilizer assembly."]]],
+[["How is the M16A1 fed, cooled and operated?","Magazine-fed, air-cooled, gas-operated, with semi or automatic fire"],["Rifle weight without the magazine","6.5 lbs"],["Cycle of operations, in order","Firing, unlocking, extracting, ejecting, cocking, feeding, chambering, locking"],["What happens in the firing step?","The firing pin strikes the primer of the cartridge"],["First step in disassembling any weapon","Clear the weapon"],["Where must the M16A1 selector be when clearing, and why?","On safe, to prevent damage to the automatic sear"],["Rule for the cleaning brush in the bore","Never reverse the brush while it is in the bore"],["Three groups the M14 separates into","Firing mechanism, barrel and receiver group, stock"]],
+[["Which cycle step removes the empty cartridge from the weapon?",1,["Extracting","Ejecting","Unlocking","Cocking"]],["The selector lever should be on safe when clearing the M16A1.",true],["What is the first step in disassembling any weapon?","clear"],["How many pounds does the M16A1 weigh without the magazine?","6.5"],["Which step seals the cartridge in the chamber?",3,["Feeding","Chambering","Cocking","Locking"]],["The M16A1 is a water-cooled weapon.",false],["Which is NOT one of the M14’s three groups?",2,["Firing mechanism","Stock","Bolt carrier group","Barrel and receiver group"]]]],
+["mark","Fundamentals of marksmanship","Firing fundamentals, positions, sight alignment and coach and pupil",[
+["Fundamentals of firing",["Aiming: aim the rifle by aligning the sight system.","Holding: control your breathing and hold your breath at any point in the cycle.","Positions: use a steady position that lets you observe the target.","Trigger control: squeeze the trigger. Finger movement can disturb the lay of the rifle."]],
+["Firing positions",["Prone: low silhouette, easy to use with cover and support.","Kneeling: suited to ground that slopes gently upward.","Standing: used in the assault to engage surprise targets, and when no other position can be used."]],
+["Three phases of aiming",["Eye and sight: eye placement is called eye relief, about 7.5 cm (3 inches). The best way to fix it is the spot weld (neck position).","Sight alignment: the relationship of front sight and rear sight to your eye.","Sight picture: front and rear sights aligned to the target, with the aiming point in the correct relationship to the front sight blade."]],
+["Correct sight picture",["Sight alignment: the top of the front sight blade sits exactly in the center of the rear sight aperture.","Focus your eye on the front sight blade. The rear aperture will look fuzzy.","Aiming point: the target on which you align your sight."]],
+["Breathing and practice",["Take a normal breath, let part out, and hold the rest by closing your throat.","Do not hold longer than about 10 seconds, or vision blurs and muscles tense.","Hold your breath while pulling the trigger.","Aiming practice comes before live firing."]],
+["Coach and pupil",["Work in pairs. Each partner takes turns as coach, watching and correcting mistakes, and as pupil, performing the exercise.","Used throughout marksmanship training wherever it applies."]]],
+[["Four fundamentals of firing","Aiming, holding, positions, trigger control"],["Position with a low silhouette, easy to use with cover","Prone"],["Position used in the assault to engage surprise targets","Standing"],["Kneeling is suited to…","Ground that slopes gently upward"],["Proper eye relief","About 7.5 cm (3 inches), fixed with the spot weld"],["Correct sight alignment","Top of the front sight blade centered in the rear sight aperture"],["Longest time to hold your breath while aiming","About 10 seconds"],["Coach and pupil method","Partners take turns correcting and performing"]],
+[["Which fundamental is about squeezing without disturbing the lay of the rifle?",2,["Aiming","Holding","Trigger control","Positions"]],["Eye relief is about 7.5 cm (3 inches).",true],["Which firing position gives the lowest silhouette?","prone"],["You should hold your breath for 30 seconds before firing.",false],["Where should your eye focus when aligning the sights?",1,["The target","The front sight blade","The rear aperture","The muzzle"]],["In the coach and pupil method, partners…",0,["Take turns in each role","Always stay in one role","Fire at the same time","Work alone"]]]],
+["imt","Individual movement technique","Day and night movement, cover, camouflage, squad roles and hand signals",[
+["Day movement",["Consider terrain, security, and your knowledge of camouflage and concealment.","Tape or pad anything that rattles or could snag. Wear soft, well-fitting clothes and carry only necessary equipment.","Move by bounds: a short distance, then halt, listen, observe, and move again.","If you alarm birds or animals, stay still and observe. Their flight may attract the enemy.","Cross roads and trails where there is the most cover and concealment."]],
+["Crawls, rushes and dropping",["High crawl: use when cover is available, visibility is poor, or speed is needed. Body stays off the ground on forearms and lower legs, rifle cradled in your arms.","Low crawl: use when cover is scarce, the enemy can observe you, and speed is not needed. Body and rifle stay flat to the ground.","Prone to rushing: look, lower your head, draw in your arms, rise on straight arms, spring up and rush the shortest route, low and zigzag.","Dropping: plant both feet, drop to a knee while sliding your hand to the heel of the rifle butt, and break the fall with the butt."]],
+["Night vision",["Dark adaptation: let your eyes adjust to low light, about one hour in the dark.","Off-center vision: look slightly to the side of an object, not directly at it.","Scanning: use off-center vision to observe an area or object.","Sudden light destroys night vision. Avoid straining your eyes."]],
+["Night movement",["Sound travels farther at night and can give you away. Scented soap, lotion and deodorant can reveal you.","Move by touching distance, use prominent terrain features, stop and listen often, and do not run unless necessary.","Walking: keep your weight on one foot and feel the ground with your toe before setting it down.","Crawling: go on hands and knees, feel for each knee spot, and move silently.","Security: know the challenge and password, use the buddy system, and use the countersign correctly."]],
+["Cover, concealment, camouflage",["Cover protects from enemy fire. Natural: ravines, hollows, reverse slopes. Artificial: fighting positions, trenches, walls.","Concealment protects from enemy observation: shadows, foliage, thick brush, fog, clouds, heavy rain.","Camouflage uses visual trickery. Match the colors and shapes around you and camouflage everything: rifle, pack, hands, even teeth and shoes."]],
+["Rifle squad and hand signals",["Two fire teams of four: team leader, grenadier, automatic rifleman and rifleman.","Mission: close with the enemy by fire and maneuver to destroy or capture them, or repel their assault by fire, close combat and counterattack.","Squad leader answers for all the squad does or fails to do and leads by example.","Team leader controls the team’s movement and fire. Automatic rifleman gives sustained fire and secures the left flank. Grenadier adds grenade firepower and secures the right flank. Rifleman handles the team’s food and medical needs.","Enemy in sight: hold the rifle horizontally with the stock at the shoulder. Halt: bring the hand to the shoulder, then thrust it straight up, palm to the front. Freeze: the halt signal with a closed fist. Assemble: raise the hand overhead and wave in large horizontal circles."]]],
+[["Low crawl or high crawl: cover is scarce and speed is not needed","Low crawl"],["High crawl is used when…","Cover is available, visibility is poor, or speed is needed"],["Dark adaptation takes about…","One hour in the dark"],["Off-center vision","Looking slightly away from an object to keep it in view at night"],["Cover vs concealment","Cover protects from fire. Concealment protects from observation"],["Examples of natural cover","Ravines, hollows, reverse slopes, big mounds of earth"],["Members of a fire team","Team leader, grenadier, automatic rifleman, rifleman"],["Signal for enemy in sight","Hold the rifle horizontally with the stock at the shoulder"],["Signal for freeze","The halt signal, then make a fist"]],
+[["Which provides protection from enemy observation?",1,["Cover","Concealment","A trench","A ravine"]],["Sudden light destroys your night vision.",true],["How many soldiers are in a fire team?","4|four"],["Which crawl keeps the body and rifle flat to the ground?",0,["Low crawl","High crawl","Rush","Drop"]],["Who secures the right flank of the squad?",2,["Automatic rifleman","Rifleman","Grenadier","Team leader"]],["Scented soap and lotion help you stay hidden at night.",false]]],
+["peace","Peace process","Peacemaking, OPAPP, the six paths to peace and the GRP peace talks",[
+["Key terms",["Peace process: the steps taken by countries or groups trying to end a war.","Peacemaking: seeks full reconciliation among adversaries and new mutual understanding.","Peacekeeping: activities that create conditions favoring lasting peace.","Peacebuilding: prevents violent conflict from starting or returning by creating sustainable peace. It addresses root causes and stabilizes society politically and economically.","Conflict resolution: methods for peacefully ending conflict, such as negotiation, mediation, arbitration and diplomacy. Its dimensions are cognitive, emotional and behavioral.","Conflict transformation: addresses the underlying conditions behind a conflict and reshapes relationships, interests and social structures."]],
+["GRP–NDFP talks",["Exploratory period, 1988–1992: goodwill measures and statements about new talks.","Preliminary talks, 1992–1995: began with the Hague Joint Declaration on 1 September 1992.","Formal negotiations, 1995–1998: produced the Comprehensive Agreement on Respect for Human Rights and International Humanitarian Law (CARHRIHL) in 1998.","Suspension and termination, 1998–2001: President Estrada suspended the talks after the NPA captured AFP/PNP officers. The VFA was ratified in May 1999.","Resumption, 2001–2006: Oslo Joint Communiqué (2001) and Oslo Joint Statement (2004), with the Royal Norwegian Government as third-party facilitator."]],
+["Mindanao peace process",["The Comprehensive Agreement on the Bangsamoro (2014) followed 17 years of negotiations between the government and the MILF.","It was the first significant peace agreement worldwide in ten years.","A hybrid setup of Filipinos and international members, military and civilians, verified the ceasefire and supported the talks."]],
+["OPAPP",["Office of the Presidential Adviser on the Peace Process.","Mission: oversee, coordinate and integrate the implementation of the comprehensive peace process.","Vision: a just and lasting peace for the nation and for all Filipinos."]],
+["Three principles",["Community-based: defined by all Filipinos as one community, not by the government or armed groups alone.","Aims for a new social compact for a just, equitable, humane and pluralistic society.","Seeks a principled, peaceful resolution of internal armed conflicts with neither blame nor surrender, but with dignity for all."]],
+["Six paths to peace",["Social, economic and political reforms: address the root causes of conflict.","Consensus-building and empowerment for peace: consultations and people’s participation.","Peaceful negotiated settlement with rebel groups: face-to-face talks and implementing agreements.","Reconciliation, reintegration and rehabilitation: programs for former rebels and civilian victims.","Addressing concerns from continuing armed hostilities: protect non-combatants.","Building a climate conducive to peace: peace education and confidence-building measures.","The paths are interrelated and pursued together."]],
+["Primacy of the peace process",["The Mindanao Peaceweavers, seven peace networks, urged the government and the MILF to uphold the primacy of the peace process.","They asked for the ceasefire mechanisms (CCCH and AHJAG) to be reactivated to protect civilians, and opposed the arming of civilians.","Conclusion: resolving conflict this way is long and tedious. There is no other path to peace but dialogue and sincere good intention."]]],
+[["Peace process (Merriam-Webster)","The steps taken by countries or groups trying to end a war"],["Which term means preventing violence from restarting by creating sustainable peace?","Peacebuilding"],["Dimensions of conflict resolution","Cognitive, emotional, behavioral"],["Conflict transformation focuses on…","The underlying conditions and structures that give rise to conflict"],["OPAPP’s mission","Oversee, coordinate and integrate the implementation of the comprehensive peace process"],["OPAPP’s vision","A just and lasting peace for the nation and for all Filipinos"],["Three principles of the comprehensive peace process","Community-based; a new social compact; principled resolution with neither blame nor surrender"],["The six paths to peace","Reforms; consensus-building; negotiated settlement; reconciliation and rehabilitation; armed hostilities concerns; climate conducive to peace"],["Year of the Comprehensive Agreement on the Bangsamoro","2014"],["Third-party facilitator in the Oslo talks","The Royal Norwegian Government"]],
+[["How many paths to peace are there?","6|six"],["Which path addresses the root causes of armed conflict?",0,["Social, economic and political reforms","Consensus-building","Reconciliation","Peace advocacy"]],["The Hague Joint Declaration was made in 1992.",true],["The comprehensive peace process should be defined by the government alone.",false],["Which 2014 agreement followed 17 years of GRP–MILF negotiations?",3,["CARHRIHL","Oslo Joint Statement","MOA-AD","Comprehensive Agreement on the Bangsamoro"]],["Which office oversees and coordinates the comprehensive peace process?","opapp|office of the presidential adviser"],["Which term means preventing violence from restarting through sustainable peace?",2,["Peacekeeping","Peacemaking","Peacebuilding","Conflict resolution"]]]]
+];
+const mk=q=>Array.isArray(q[2])?{q:q[0],a:q[1],o:q[2],t:"mc"}:typeof q[1]=="boolean"?{q:q[0],a:q[1]?0:1,o:["True","False"],t:"mc"}:{q:q[0],a:q[1],t:"id"};
+const M=D.map(d=>({id:d[0],t:d[1],s:d[2],L:d[3],F:d[4],Q:d[5].map(mk)}));
+const C=["#4f6a2a","#c8741d","#2f6f8f","#7a5a9c","#b3392b"],V=["home","lessons","cards","quiz"];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const sh=a=>{a=a.slice();for(let i=a.length;i>1;){const j=Math.random()*i--|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let P={k:{},b:{}};try{P=JSON.parse(localStorage.getItem("msr")||"")||P}catch(e){}
+const save=()=>{try{localStorage.setItem("msr",JSON.stringify(P))}catch(e){}};
+let S={v:"home",m:"all",ci:0,dm:null,deck:[],q:null};
+const cur=()=>M.find(m=>m.id==S.m)||M[0];
+const cards=m=>(m=="all"?M:M.filter(x=>x.id==m)).flatMap(x=>x.F.map((f,i)=>({id:x.id,i,q:f[0],a:f[1],t:x.t})));
+const kn=c=>(P.k[c.id]||[]).includes(c.i);
+const mark=(c,v)=>{const k=P.k[c.id]=(P.k[c.id]||[]).filter(i=>i!=c.i);if(v)k.push(c.i);save()};
+const pick=(all,fn)=>`<div class="pills" role="group" aria-label="Choose a module">${(all?[{id:"all",t:"All modules"}]:[]).concat(M).map(m=>`<button class="pill${(all?S.m==m.id:cur().id==m.id)?" on":""}" onclick="${fn}('${m.id}')">${m.t}</button>`).join("")}</div>`;
+const sel=m=>{S.m=m;S.ci=0;S.q=null;S.dm=null;render()};
+function go(v,m){S.v=v;if(m){S.m=m;S.ci=0;S.q=null;S.dm=null}try{location.hash=v}catch(e){}render();scrollTo(0,0)}
+function vHome(){
+ const tot=M.reduce((a,m)=>a+m.F.length,0),k=M.reduce((a,m)=>a+(P.k[m.id]||[]).length,0);
+ return `<h1>Military science reviewer</h1><p>Five modules from your slides, with flashcards and quizzes to test what sticks.</p><div class="bar" role="img" aria-label="${k} of ${tot} flashcards known"><i style="width:${k/tot*100}%"></i></div><p class="meta">${k} of ${tot} flashcards marked as known</p>
+ <div class="grid">${M.map((m,i)=>{const n=(P.k[m.id]||[]).length,b=P.b[m.id];return `<article class="mc" style="--c:${C[i]}"><h3>${m.t}</h3><p>${m.s}</p><p class="meta">${m.L.length} lessons, ${n} of ${m.F.length} cards known${b!=null?", best quiz "+b+"%":""}</p><div class="row"><button class="btn" onclick="go('lessons','${m.id}')">Read</button><button class="btn" onclick="go('cards','${m.id}')">Flashcards</button><button class="btn" onclick="go('quiz','${m.id}')">Quiz</button></div></article>`}).join("")}</div>
+ <button class="btn pri big" onclick="go('quiz','all')">Take the mixed exam (15 questions)</button>`}
+function vLearn(){const m=cur();return `${pick(0,"sel")}<h2>${m.t}</h2><p class="meta">${m.s}</p>${m.L.map((s,i)=>`<details${i?"":" open"}><summary>${s[0]}</summary><ul>${s[1].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("")}<div class="row"><button class="btn pri" onclick="go('cards','${m.id}')">Practice flashcards</button><button class="btn" onclick="go('quiz','${m.id}')">Take the quiz</button></div>`}
+const flip=()=>$("#fc").classList.toggle("on");
+const step=d=>{S.ci=(S.ci+d+S.deck.length)%S.deck.length;render()};
+const rate=v=>{mark(S.deck[S.ci],v);step(1)};
+function vCards(){
+ if(S.dm!==S.m){S.deck=cards(S.m);S.dm=S.m;S.ci=0}
+ const d=S.deck,c=d[S.ci],k=d.filter(kn).length;
+ return `${pick(1,"sel")}<p class="meta">${k} of ${d.length} known</p><div class="bar"><i style="width:${k/d.length*100}%"></i></div>
+ <button class="fc" id="fc" onclick="flip()" aria-label="Flip card"><span><em>${c.t}</em>${c.q}</span><span class="bk">${c.a}</span></button>
+ <p class="meta">Card ${S.ci+1} of ${d.length}${kn(c)?", marked known":""}. Tap the card to flip it. Arrow keys move between cards.</p>
+ <div class="row"><button class="btn" onclick="step(-1)">Previous</button><button class="btn" onclick="rate(0)">Still learning</button><button class="btn pri" onclick="rate(1)">Got it</button><button class="btn" onclick="step(1)">Next</button></div>
+ <button class="lnk" onclick="S.deck=sh(S.deck);S.ci=0;render()">Shuffle deck</button>`}
+function startQ(){const all=S.m=="all",pool=all?M.flatMap(m=>m.Q):cur().Q,l=sh(pool);S.q={list:all?l.slice(0,15):l,i:0,s:0,w:[],d:0};render()}
+function ans(v){const q=S.q,x=q.list[q.i];if(q.d)return;let ok,c;
+ if(x.t=="mc"){ok=v==x.a;c=x.o[x.a]}
+ else{const g=String(v).trim().toLowerCase();ok=g.length>0&&x.a.toLowerCase().split("|").some(s=>g.includes(s));c=x.a.split("|")[0]}
+ q.d=1;q.ok=ok;q.v=v;q.c=c;if(ok)q.s++;else q.w.push(x);render()}
+function nextQ(){const q=S.q;q.i++;q.d=0;if(q.i>=q.list.length){const p=Math.round(q.s/q.list.length*100);if(P.b[S.m]==null||p>P.b[S.m]){P.b[S.m]=p;save()}}render()}
+function vQuiz(){
+ const q=S.q,all=S.m=="all";
+ if(!q)return `${pick(1,"sel")}<section class="panel"><h2>${all?"Mixed exam":cur().t}</h2><p>${all?"15 random questions from every module.":cur().Q.length+" questions: multiple choice, true or false, and type-in answers."}</p>${P.b[S.m]!=null?`<p class="meta">Best score: ${P.b[S.m]}%</p>`:""}<button class="btn pri" onclick="startQ()">Start quiz</button></section>`;
+ const n=q.list.length;
+ if(q.i>=n){const p=Math.round(q.s/n*100);return `<section class="panel"><h2>${q.s} of ${n} correct</h2><div class="bar"><i style="width:${p}%"></i></div><p>${p>=80?"Strong result. Keep it fresh with flashcards.":p>=50?"Getting there. Reread the lessons for the ones you missed.":"Go back through the lessons first, then try again."}</p>${q.w.length?`<h3>Review these</h3><ul class="rev">${q.w.map(x=>`<li>${x.q}<b>${x.t=="mc"?x.o[x.a]:x.a.split("|")[0]}</b></li>`).join("")}</ul>`:""}<div class="row"><button class="btn pri" onclick="startQ()">Try again</button><button class="btn" onclick="go('lessons')">Open lessons</button><button class="btn" onclick="S.q=null;render()">Change module</button></div></section>`}
+ const x=q.list[q.i];let body;
+ if(x.t=="id")body=q.d?`<p class="meta">Your answer: ${esc(q.v)}</p>`:`<input id="ia" class="inp" autocomplete="off" placeholder="Type your answer" aria-label="Your answer" onkeydown="if(event.key=='Enter')ans(this.value)"><button class="btn pri" onclick="ans($('#ia').value)">Check answer</button>`;
+ else body=`<div class="opts">${x.o.map((o,j)=>`<button class="opt${q.d?(j==x.a?" ok":j==q.v?" no":""):""}"${q.d?" disabled":""} onclick="ans(${j})">${o}</button>`).join("")}</div>`;
+ const fb=q.d?`<p class="fb ${q.ok?"ok":"no"}" role="status">${q.ok?"Correct.":"Not quite. The answer is: "+q.c}</p><button class="btn pri" onclick="nextQ()">${q.i==n-1?"See results":"Next question"}</button>`:"";
+ return `<p class="meta">Question ${q.i+1} of ${n}</p><div class="bar"><i style="width:${q.i/n*100}%"></i></div><section class="panel"><h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">${x.q}</h2>${body}${fb}</section>`}
+function render(){
+ document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.v==S.v));
+ $("#app").innerHTML=({home:vHome,lessons:vLearn,cards:vCards,quiz:vQuiz})[S.v]();
+ const i=$("#ia");if(i)i.focus({preventScroll:true})}
+addEventListener("hashchange",()=>{const v=location.hash.slice(1);if(V.includes(v)&&v!=S.v){S.v=v;render()}});
+addEventListener("keydown",e=>{if(S.v=="cards"&&!/INPUT|TEXTAREA/.test(e.target.tagName)){if(e.key=="ArrowRight")step(1);if(e.key=="ArrowLeft")step(-1)}});
+{const h=location.hash.slice(1);if(V.includes(h))S.v=h}
+render();
+</script>
+</body>
+</html>
